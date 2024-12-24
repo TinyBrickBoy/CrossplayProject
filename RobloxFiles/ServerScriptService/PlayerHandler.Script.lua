@@ -13,13 +13,13 @@ local usernameToUUID = {}
 local updateInterval = 60 / 100 -- 100 requests per minute
 
 local dataUrl = "http://" .. ReplicatedStorage.IP.Value .. "/players"
-local crossplayApiUrl = "https://crossplayproject.xyz/api/uuid/"
+local mojangApiUrl = "https://sessionserver.mojang.com/session/minecraft/profile/"
 
 local function getUsername(uuid)
-	local url = crossplayApiUrl .. uuid
+	local url = mojangApiUrl .. uuid
 	local response = HttpService:GetAsync(url)
 	local jsonData = HttpService:JSONDecode(response)
-	return jsonData.username
+	return jsonData.name
 end
 
 local function handleRequest()
