@@ -282,47 +282,6 @@ The Roblox side provides a framework to help you start creating your own code. I
 - **ModifyMode.rbxm**  
   Contains two GUI buttons for the action scripts.
 
-# Our API
-
-We provide an API to resolve Minecraft player's usernames and skins by their UUIDs. The API supports both Java and Bedrock (floodgate) UUIDs.
-
-## Get Username by UUID
-
-**Endpoint**: `/api/uuid/:uuid`
-
-- **Method**: GET
-- **Description**: Retrieves the username associated with the provided UUID.
-- **Parameters**:
-  - `uuid` (string): The UUID of the Minecraft player. Supports both Java and Bedrock UUIDs.
-
-**Example Request**:
-```sh
-curl https://crossplayproject.xyz/api/uuid/92270a4f-f954-4087-a932-e8d0e5deb2bd
-```
-
-**Example Response**:
-```json
-{
-    "username":"The_Atmerek"
-}
-```
-
-## Get Skin by UUID
-
-**Endpoint**: `/api/uuid/:uuid/skin`
-
-- **Method**: GET
-- **Description**: Retrieves the skin associated with the provided UUID.
-- **Parameters**:
-  - `uuid` (string): The UUID of the Minecraft player. Supports both Java and Bedrock UUIDs.
-
-**Example Request**:
-```sh
-curl https://crossplayproject.xyz/api/uuid/92270a4f-f954-4087-a932-e8d0e5deb2bd/skin
-```
-
-**Response**: Returns the skin image in PNG format.
-
 # Selfhosting
 
 **To selfhost the project, you will need a host that supports custom HTTP ports and plugins (if it can run Dynmap, it can probably run this), or a plain VPS server.**
@@ -389,18 +348,3 @@ curl https://crossplayproject.xyz/api/uuid/92270a4f-f954-4087-a932-e8d0e5deb2bd/
    - Go to game settings on Roblox and enable HTTP requests.
 
 For further details, contact support.
-
-
-# Demo
-
-We provide a demo for you to test the source without needing to set up everything yourself.
-
-- **Demo Server IP**: `demo.crossplayproject.xyz`
-- **Demo Roblox link**: [🙀](https://www.roblox.com/games/18468309810/The-Crossplay-Project-Source)
-- **API Base URL**: `https://crossplayproject.xyz/demo/`
-
-To use the endpoints, append the endpoint name to the base URL. For example, to access the `/players` endpoint, use `https://crossplayproject.xyz/demo/players`.
-
-# Support
-
-For support, reach us at [our Discord](https://dc.crossplayproject.xyz).
